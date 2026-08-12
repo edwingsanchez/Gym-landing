@@ -14,12 +14,23 @@
         padding: 0%;
         margin: 0%;
         box-sizing: border-box;
+        text-decoration: none;
     }
 
     body{
         background: #090B0FFF;
         color: white;
         font-family: "Inter", sans-serif;
+    }
+
+    section{
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     header{
@@ -34,18 +45,9 @@
         align-items: center;
 
         font-size: 14px;
-
     }
-    
 
-    section{
-        width: 100%;
-        height: 100vh;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
     .title-tag{
         width: 258px;
@@ -76,14 +78,21 @@
         color: #007BFF;
     }
 
-    .hero-title,
-    h1,
-    h2,
-    h3 {
-        font-family: "Syne", sans-serif;
+    h1{
+        font-size: 48px;
+        font-weight: 700; 
+        font-family: Syne; 
+    }
+
+    h2{
+        font-size: 32px; 
+        font-weight: 700; 
+        font-family: Syne; 
     }
 
     .hero-title{
+        font-family: "Syne", sans-serif;
+        width: 771px;
         font-size: 64px; 
         line-height: 64px; 
         font-weight: 800;
@@ -91,12 +100,109 @@
     }
 
     .hero-parrafo{
-
+        font-size: 18px;
+        font-weight: 400; 
+        color: #A8ABB2FF; 
     }
 
     .hero-button{
+        width: auto; 
+        height: 56px; 
+        padding: 0 12px;
 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        
+        font-family: Inter; 
+        font-size: 16px; 
+        line-height: 26px; 
+        font-weight: 500; 
+        color: #F6F7F9FF; 
+        
+        background: #007BFFFF; 
+        opacity: 1; 
+        border-radius: 2px; 
+        border-width: 0px; 
+        border-color: #FFFFFFFF; /* white */
+        border-style: solid; 
+        box-shadow: 0px 4px 8px #0000004D, 0px 0px 0px #171a1f00; /* shadow-custom */
     }
+
+
+
+
+
+
+    .rating-card{
+        width: 390px; 
+        height: 312px; 
+        padding: 32px;
+
+        background: #1D1F23FF; 
+        border-radius: 4px; 
+        box-shadow: 0px 2px 4px #00000033, 0px 0px 0px #171a1f00;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 23px;
+    }
+
+    .rating-card img{
+        width: 40px; 
+        height: 40px;
+        background-color: white;
+    }
+
+    .rating-card-cont{
+        font-size: 16px; 
+        line-height: 26px; 
+        font-weight: 400; 
+        color: #F6F7F9FF; 
+        font-style: italic;
+    }
+
+
+    .rating-card-nombre{
+        font-size: 14px; 
+        line-height: 20px; 
+        font-weight: 600; 
+        color: #F6F7F9FF; 
+    }
+
+    .rating-card-cargo{
+        font-size: 14px; 
+        line-height: 20px; 
+        font-weight: 400; 
+        color: #A8ABB2FF; 
+    }
+
+    .rating-button{
+        width: 328px; 
+        height: 56px; 
+
+        padding: 0 12px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+
+        font-family: Inter; 
+        font-size: 16px; 
+        line-height: 26px; 
+        font-weight: 500; 
+        color: #F6F7F9FF; 
+        background: #1D1F23FF; 
+        opacity: 1; 
+
+        border-radius: 2px; 
+        border-width: 0px; 
+        border-color: #FFFFFFFF;
+        border-style: solid; 
+        box-shadow: 0px 4px 8px #0000004D, 0px 0px 0px #171a1f00;
+    }
+
+
 
 
 
@@ -114,33 +220,99 @@
     </header>
 
 
+
+
+
+
     <section style="height: 766px;  background: #1D1F23FF; display: flex; flex-direction: row; justify-content: center; gap: 63px; align-items: center;">
         <div style="width: 771px; display: flex; flex-direction: column; gap: 41px;">
             <div style="display: flex; flex-direction: column; gap: 23px;">
                 <p class="title-tag">#1 CENTRO DE FITNESS EN LA CIUDAD</p>
-                <h1>TRANSFORMA A TU CUERPO Y TU MENTE</h1>
-                <P>No es solo un gimnasio, es tu nuevo estilo de vida. En Fit Center combinamos ciencia deportiva, equipamiento premium y una comunidad que te impulsa a superar tus límites cada día.</P>
+                <p class="hero-title">TRANSFORMA A TU CUERPO Y TU MENTE</p>
+                <P class="hero-parrafo" style="width: 493px;">No es solo un gimnasio, es tu nuevo estilo de vida. En Fit Center combinamos ciencia deportiva, equipamiento premium y una comunidad que te impulsa a superar tus límites cada día.</P>
             </div>
 
-            <div style="display: flex; flex-direction: row; gap: 25px;">
+            <div style="display: flex; flex-direction: column; gap: 25px;">
                 <div style="display: flex; flex-direction: row; gap: 15px;">
-                    <a href="">AGENDA TU CLASE </a>
-                    <a href="">VER PLANES</a>
+                    <a class="hero-button" href="">AGENDA TU CLASE </a>
+                    <a class="hero-button" href="">VER PLANES</a>
                 </div>
 
                 <p>*Primera sesion gratuita*</p>
             </div>
+        </div>
+
+        <div style="width: 382px; height: 765px; background: linear-gradient(90deg, #1D1F23FF 0%, #1D1F2300 50%, #1D1F2300 100%); background-image: url('/hero-image.jpg'); ">
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section style="height: 880px; display: flex; flex-direction: column; gap: 65px;">
+        <div style="display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center;">
+            <h1>LO QUE DICEN NUESTROS ATLETAS</h1>
+            <p style="width: 676px; font-size: 20px; font-weight: 600; color: #A8ABB2FF;">Nuestra comunidad es el corazón de Fit Center. Escucha las historias reales de quienes ya están logrando sus objetivos.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: row; gap: 31px;">
+            <div class="rating-card">
+                <img>
+                <p class="rating-card-cont">"Perdí 15kg en mis primeros 6 meses. Los coaches realmente se preocupan por tu técnica y progreso. Es la mejor inversión que he hecho."</p>
+                
+                <div style="display: flex; flex-direction: row; gap: 16px; align-items: center;">
+                    <img style="width: 48px; height: 48px; border-radius: 24px;">
+                    <div style="display: flex; flex-direction: column;">
+                        <p class="rating-card-nombre">Carlos Mendez</p>
+                        <p class="rating-card-cargo">Miembro por 2 años</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="rating-card">
+                <img>
+                <p class="rating-card-cont">"El equipamiento es de otro nivel. Siempre está limpio y hay suficiente espacio incluso en horas pico. Fit Center cambió mi forma de entrenar."</p>
+
+                <div style="display: flex; flex-direction: row; gap: 16px; align-items: center;">
+                    <img style="width: 48px; height: 48px; border-radius: 24px;">
+                    <div style="display: flex; flex-direction: column;">
+                        <p class="rating-card-nombre">Elena Rodríguez</p>
+                        <p class="rating-card-cargo">Atleta de Crossfit</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="rating-card">
+                <img>
+                <p class="rating-card-cont">"Las clases de la mañana son brutales. Me dan la energía necesaria para todo el día. El ambiente es súper motivador."</p>
+
+                <div style="display: flex; flex-direction: row; gap: 16px; align-items: center;">
+                    <img style="width: 48px; height: 48px; border-radius: 24px;">
+                    <div style="display: flex; flex-direction: column;">
+                        <p class="rating-card-nombre">Roberto Silva</p>
+                        <p class="rating-card-cargo">Emprendedor</p>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
 
-        <img src="/hero-image.jpg" style="width: 382px; height: 765px;">
-
+        <a class="rating-button" href="">AGENDA TU CLASE GRATIS</a>
+        
 
     </section>
 
-    <section>
-        <h1>rating</h1>
-    </section>
+
+
+
+
+
 
     <section style="background: #1D1F23FF;">
         <h1>Painpoint</h1>
