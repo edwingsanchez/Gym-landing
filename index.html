@@ -388,7 +388,7 @@
 
 
 
-    .query-card{
+    .faq-trigger{
         width: 848px; 
         height: 56px; 
 
@@ -427,6 +427,38 @@
         line-height: 24px; 
         font-weight: 400; 
         color: #B2B6BCFF; 
+    }
+
+
+
+
+    footer{
+        width: 1440px; 
+        height: 217px; 
+        padding: 24px;
+        background: #090B0FFF; 
+
+        display: flex; 
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .footer-logo{
+        font-family: Inter; /* Body */
+        font-size: 20px; 
+        line-height: 28px; 
+        font-weight: 700; 
+        color: #F6F7F9FF; 
+    }
+
+    .footer-logo-parrafo{
+        font-family: Inter; /* Body */
+        font-size: 14px; 
+        line-height: 20px; 
+        font-weight: 400; 
+        color: #A8ABB2FF; 
     }
 
 
@@ -824,47 +856,76 @@
 
 
     <section style="height: 857px; display: flex; flex-direction: column; gap: 65px; align-items: center;">
+
         <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
             <h1>PREGUNTAS FRECUENTES</h1>
             <p class="section-subtitle">Resolvemos tus dudas antes de empezar tu transformación.</p>
         </div>
+
         <div class="query-column"  style="display: flex; flex-direction: column; gap: 8px;">
-            <div class="query-card">
-                <p>¿NECESITO EXPERIENCIA PREVIA PARA UNIRME?</p>
-                <p>></p>
+            <div class="faq-trigger">
+                <button>¿NECESITO EXPERIENCIA PREVIA PARA UNIRME?</button>
+                <div class="faq-content">
+                    <p>Respuesta #1</p>
+                </div>
             </div>
-            <hr>
-            <div class="query-card">
-                <p>¿NECESITO EXPERIENCIA PREVIA PARA UNIRME?</p>
-                <p>></p>
-            </div>
-            <hr>
-            <div class="query-card">
-                <p>¿TIENEN PLANES PARA ESTUDIANTES O FAMILIAS?</p>
-                <p>></p>
-            </div>
-            <hr>
-            <div class="query-card">
-                <p>¿PUEDO CANCELAR MI SUSCRIPCIÓN EN CUALQUIER MOMENTO?</p>
-                <p>></p>
-            </div>
-            <hr>
-            <div class="query-card">
-                <p>¿OFRECEN SERVICIOS DE NUTRICIÓN?</p>
-                <p>></p>
-            </div>
-            <hr>
-            <div class="query-card">
-                <p>¿CUÁLES SON SUS MEDIDAS DE HIGIENE?</p>
-                <p>></p>
-            </div>
+
             <hr>
 
+            <div class="faq-trigger">
+                <button>¿NECESITO EXPERIENCIA PREVIA PARA UNIRME?</button>
+                <div class="faq-content">
+                    <p>Respuesta #2</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="faq-trigger">
+                <button>¿TIENEN PLANES PARA ESTUDIANTES O FAMILIAS?</button>
+                <div class="faq-content">
+                    <p>Respuesta #3</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="faq-trigger">
+                <p>¿PUEDO CANCELAR MI SUSCRIPCIÓN EN CUALQUIER MOMENTO?</p>
+                <div class="faq-content">
+                    <p>Respuesta #4</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="faq-trigger">
+                <p>¿OFRECEN SERVICIOS DE NUTRICIÓN?</p>
+                <div class="faq-content">
+                    <p>Respuesta #4</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="faq-trigger">
+                <p>¿CUÁLES SON SUS MEDIDAS DE HIGIENE?</p>
+                <div class="faq-content">
+                    <p>Respuesta #5</p>
+                </div>
+            </div>
+
+            <hr>
         </div>
 
 
         
     </section>
+
+
+    <script>
+        addEventListener
+    </script>
 
 
 
@@ -907,10 +968,6 @@
                 </div>
             </div>
         </div>
-
-        
-
-
     </section>
 
 
@@ -925,7 +982,48 @@
 
 
 
+    <footer>
+        <div style="width: 294px; display: flex; flex-direction: column; gap: 13px;">
+            <div style="display: flex; flex-direction: row; gap: 8px; align-items: center;">
+                <img style="width: 40px; height: 40px; border-radius: 100%; background: #007BFFFF;">
+                <p class="footer-logo">Fit Center</p>
+            </div>
+            
+            <p class="footer-logo-parrafo" style="width: 294px;">Tu centro de entrenamiento premium para alcanzar tus metas de salud y bienestar de forma estructurada.</p>
 
-    <footer></footer>
+        </div>
+
+        <div style="width: 400px;  display: flex; flex-direction: column; align-items: end; gap: 23px;">
+            <div class="footer-logo-parrafo" style="display: flex; flex-direction: row; gap: 23px;">
+                <p>Politica de privacidad</p>
+                <p>Términos de Servicio</p>
+            </div>
+            <div style="display: flex; flex-direction: row; gap: 16px;">
+                <img style="width: 36px; height: 36px; border-radius: 100%; background: #3A3C41FF; ">
+                <img style="width: 36px; height: 36px; border-radius: 100%; background: #3A3C41FF;">
+                <img style="width: 36px; height: 36px; border-radius: 100%; background: #3A3C41FF;">
+            </div>
+            <p style="font-size: 12px; font-weight: 400; color: #A8ABB2FF; ">© 2026 Fit Center. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
