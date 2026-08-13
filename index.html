@@ -232,9 +232,9 @@
 
 
 
-    .key-benefit-tag{
 
-    }
+
+    
 
     .key-benefit-parrafo{
         font-size: 16px; 
@@ -312,6 +312,76 @@
         line-height: 24px; 
         font-weight: 400; 
         color: #A8ABB2FF;
+    }
+
+
+
+
+
+
+
+
+
+
+    .paso-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .paso-card-num{
+        font-family: Inter; /* Body */
+        font-size: 96px; 
+        line-height: 96px; 
+        font-weight: 900; 
+        color: #202733; 
+ 
+    }
+
+    .paso-card-title{
+        font-family: Syne; 
+        font-size: 32px; 
+        font-weight: 700; 
+        color: #F6F7F9FF;
+    }
+
+    .paso-card-cont{
+        font-family: Inter; /* Body */
+        font-size: 16px; 
+        line-height: 24px; 
+        font-weight: 400; 
+        color: #A8ABB2FF;
+    }
+
+    .paso-button{
+        width: 328px; 
+        height: 56px; 
+        padding: 0 12px;
+
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+
+        font-family: Inter; 
+        font-size: 16px; 
+        line-height: 26px; 
+        font-weight: 500; 
+        color: #F6F7F9FF; 
+        background: #007BFFFF; 
+        opacity: 1; 
+        
+        border-radius: 2px; 
+        border-width: 0px; 
+        border-color: #FFFFFFFF; /* white */
+        border-style: solid; 
+        box-shadow: 0px 4px 8px #0000004D, 0px 0px 0px #171a1f00; /* shadow-custom */
+        gap: 15px; 
+        
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
     }
 
 
@@ -660,9 +730,46 @@
 
 
 
-    <hr>
-    <section style="background: #3A3C4180; ">
-        <h1>Pasos</h1>
+    <section style="height: 720px; background: #3A3C4180; display: flex; flex-direction: column; gap: 65px; align-items: center;">
+
+        <div style="display: flex; flex-direction: column; gap: 24px; align-items: center;">
+
+            <div style="width: 673px; display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center;">
+                <h1>TU CAMINO AL EXITO</h1>
+                <p class="section-subtitle">Hemos simplificado el proceso para que solo tengas que presentarte y dar lo mejor de ti.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: row; gap: 108px;">
+                <div class="paso-card" style="width: 325px; ">
+                    <div style="height: auto; display: flex; flex-direction: column; align-items: center;">
+                        <h1 class="paso-card-num">01</h1>
+                        <p class="paso-card-title">Agenda tu Clase</p>
+                    </div>
+                    <p class="paso-card-cont">Reserva una sesión gratuita para conocer nuestras instalaciones y coaches.</p>
+                </div>
+
+                <div class="paso-card" style="width: 313px;">
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <h1 class="paso-card-num">02</h1>
+                        <p class="paso-card-title">Crea tu Plan</p>
+                    </div>
+                    <p class="paso-card-cont">Recibe una evaluación física completa y tu primer programa personalizado.</p>
+                </div>
+
+                <div class="paso-card" style="width: 286px;">
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <h1 class="paso-card-num">03</h1>
+                        <p class="paso-card-title">Ve por Todo</p>
+                    </div>
+                    <p class="paso-card-cont">Entrena con consistencia guiado por expertos y alcanza tus metas.</p>
+                </div>
+            </div>
+
+        </div>
+        
+
+
+        <a class="paso-button">AGENDA TU CLASE GRATIS</a>
     </section>
 
 
@@ -680,12 +787,32 @@
 
 
 
-    
 
-    <section>
+
+    <section style="height: 857px;">
         <h1>Staff</h1>
     </section>
     <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section>
         <h1>Preguntas frecuentes</h1>
