@@ -179,7 +179,6 @@
     .rating-card img{
         width: 40px; 
         height: 40px;
-        background-color: white;
     }
 
     .rating-card-cont{
@@ -388,35 +387,75 @@
 
 
 
-    .faq-trigger{
-        width: 848px; 
-        height: 56px; 
 
-        display: flex; 
-        align-items: center; 
-        justify-content: space-between; 
-
-        font-family: Inter; 
-        font-size: 16px; 
-        line-height: 26px; 
-        font-weight: 500; 
-
-        color: #F6F7F9FF; 
-        background: #00000000; /* transparent */
-        opacity: 1; 
-        border: none; 
-        border-radius: 0px 0px 0px 0px; 
-    }
+    
 
 
-    .query-column hr{
-        width: 848px; 
-        height: 0px; 
-        border-width: 1px; 
-        border-color: #3A3C41FF; 
-        border-style: solid; 
-        transform: rotate(0deg); 
-    }
+/* Contenedor principal */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #00000000; /* Fondo negro como la imagen */
+}
+
+/* Cada fila */
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Línea divisoria sutil */
+}
+
+/* Botón/Cabecera de la pregunta */
+.faq-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 25px 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+}
+
+/* Icono de flecha */
+.faq-icon {
+  color: #ffffff;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+/* Cuerpo que contiene la respuesta (oculto por defecto) */
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out; /* Animación de apertura */
+}
+
+/* Contenido de la respuesta (para dar margen interno sin romper la animación) */
+.faq-content {
+  padding-bottom: 25px;
+  color: #a3a3a3; /* Color grisáceo para mejor lectura */
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ESTADOS ACTIVOS (Controlados por JS) */
+
+/* Rotación del icono al abrir */
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+
+
+
 
 
 
@@ -467,12 +506,17 @@
 <body>
     <header>
         <div style="display: flex; flex-direction: row; gap: 8px; align-items: center;">
-            <img style="width: 40px; height: 40px">
+            <img src="/imagenes/logo.png" style="width: 40px; height: 40px">
             <p>Fit Center</p>
         </div>
         <div style="display: flex; flex-direction: row; gap: 23px;">
-            <p>333-333-333</p>
-            <p>Unete ahora</p>
+            <div style="display: flex; flex-direction: row; gap: 8px; align-items: center;">
+                <img src="/imagenes/visily-phone (2).png" alt="">
+                <p>333-333-333</p>
+            </div>
+
+            <p class="hero-button" style="height: 40px; width: 131px; font-size: 14px; ">Únete ahora</p>
+
         </div>
     </header>
 
@@ -491,8 +535,8 @@
 
             <div style="display: flex; flex-direction: column; gap: 25px;">
                 <div style="display: flex; flex-direction: row; gap: 15px;">
-                    <a class="hero-button" href="">AGENDA TU CLASE </a>
-                    <a class="hero-button" href="">VER PLANES</a>
+                    <a class="hero-button" style="width: 328px" href="">AGENDA TU CLASE GRATIS</a>
+                    <a class="hero-button" style=" width: 173px; background: #090B0FFF; border: solid 1px white;">VER PLANES</a>
                 </div>
 
                 <p>*Primera sesion gratuita*</p>
@@ -517,11 +561,14 @@
 
         <div style="display: flex; flex-direction: row; gap: 31px;">
             <div class="rating-card">
-                <img>
+                <img src="/imagenes/visily-quote.png" alt="">
                 <p class="rating-card-cont">"Perdí 15kg en mis primeros 6 meses. Los coaches realmente se preocupan por tu técnica y progreso. Es la mejor inversión que he hecho."</p>
                 
                 <div style="display: flex; flex-direction: row; gap: 16px; align-items: center;">
-                    <img style="width: 48px; height: 48px; border-radius: 24px;">
+                    <div style="width: 48px; height: 48px; border-radius: 100%; overflow: hidden; display: flex; align-items: center;">
+                        <img src="/imagenes/D1.jpg" style="width: 100%;">
+                    </div>
+                    
                     <div style="display: flex; flex-direction: column;">
                         <p class="rating-card-nombre">Carlos Mendez</p>
                         <p class="rating-card-cargo">Miembro por 2 años</p>
@@ -531,11 +578,14 @@
 
 
             <div class="rating-card">
-                <img>
+                <img src="/imagenes/visily-quote.png" alt="">
                 <p class="rating-card-cont">"El equipamiento es de otro nivel. Siempre está limpio y hay suficiente espacio incluso en horas pico. Fit Center cambió mi forma de entrenar."</p>
 
                 <div style="display: flex; flex-direction: row; gap: 16px; align-items: center;">
-                    <img style="width: 48px; height: 48px; border-radius: 24px;">
+                    <div style="width: 48px; height: 48px; border-radius: 100%; overflow: hidden; display: flex; align-items: center;">
+                        <img src="/imagenes/G1.jpg" style="width: 100%;">
+                    </div>
+                    
                     <div style="display: flex; flex-direction: column;">
                         <p class="rating-card-nombre">Elena Rodríguez</p>
                         <p class="rating-card-cargo">Atleta de Crossfit</p>
@@ -545,11 +595,14 @@
 
 
             <div class="rating-card">
-                <img>
+                <img src="/imagenes/visily-quote.png" alt="">
                 <p class="rating-card-cont">"Las clases de la mañana son brutales. Me dan la energía necesaria para todo el día. El ambiente es súper motivador."</p>
 
                 <div style="display: flex; flex-direction: row; gap: 16px; align-items: center;">
-                    <img style="width: 48px; height: 48px; border-radius: 24px;">
+                    <div style="width: 48px; height: 48px; overflow: hidden; border-radius: 100%; display: flex; align-items: center;">
+                        <img src="/imagenes/D1.jpg" style="width: 100%;">
+                    </div>
+                    
                     <div style="display: flex; flex-direction: column;">
                         <p class="rating-card-nombre">Roberto Silva</p>
                         <p class="rating-card-cargo">Emprendedor</p>
@@ -590,12 +643,28 @@
 
        <div style="display: flex; flex-direction: row; gap: 106px;" class="section-list">
             <div style="display: flex; flex-direction: column; gap: 24px;">
-                <p>Sin rutinas aburridas y repetitivas</p>
-                <p>Sin equipamiento dañado o sucio</p>
+                <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
+                    <img src="/imagenes/visily-circle-check (5).png">
+                    <p>Sin rutinas aburridas y repetitivas</p>
+                </div>
+                <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
+                    <img src="/imagenes/visily-circle-check (5).png">
+                    <p>Sin equipamiento dañado o sucio</p>
+                </div>
+                
+                
             </div>
             <div style="display: flex; flex-direction: column; gap: 24px;">
-                <p>Olvídate de la falta de motivación</p>
-                <p>No más sentirte perdido en el gimnasio</p>
+                <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
+                    <img src="/imagenes/visily-circle-check (5).png">
+                    <p>Olvídate de la falta de motivación</p>
+                </div>
+                <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
+                    <img src="/imagenes/visily-circle-check (5).png">
+                    <p>No más sentirte perdido en el gimnasio</p>
+                </div>
+                
+                
             </div>
         </div>
 
@@ -621,8 +690,16 @@
                 <p class="key-benefit-parrafo">Nuestros planes no son al azar. Utilizamos mediciones biométricas y objetivos específicos para diseñar la ruta más eficiente hacia tu transformación física. Cada repetición cuenta.</p>
                 
                 <div style="display: flex; flex-direction: column; gap: 16px;">
-                    <p class="section-list" >Evaluación mensual de composición corporal.</p>
-                    <p class="section-list" >Metas semanales monitoreadas por tu coach.</p>
+                    <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
+                        <img src="/imagenes/visily-zap (1).png" alt="">
+                        <p class="section-list" >Evaluación mensual de composición corporal.</p>
+                    </div>
+                    <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
+                        <img src="/imagenes/espiral.png" alt="">
+                        <p class="section-list" >Metas semanales monitoreadas por tu coach.</p>
+                    </div>
+                    
+                    
                 </div>
 
 
@@ -635,7 +712,9 @@
 
 
         <div style="display: flex; flex-direction: row; gap: 120px;  justify-content: center; align-items: center;">
-            <div style="width: 584px; height: 389px; overflow: hidden; background-image: url(/f0213335-9401-428f-8962-e32986440653.webp);"></div>
+            <div style="width: 584px; height: 389px; overflow: hidden;">
+                <img src="/f0213335-9401-428f-8962-e32986440653.webp" style="width: 100%;">
+            </div>
             
             
             <div style="display: flex; flex-direction: column; width: 528px; gap: 32px;">
@@ -673,8 +752,16 @@
                 <p class="key-benefit-parrafo">El entrenamiento es solo el 50%. Te ayudamos con el resto: asesoría nutricional, áreas de estiramiento guiado y una comunidad que apoya tu salud mental.</p>
                 
                 <div style="display: flex; flex-direction: column; gap: 16px;">
-                    <p class="section-list">Planes de alimentación personalizados.</p>
-                    <p class="section-list">Sesiones semanales de yoga y movilidad.</p>
+                    <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
+                        <img src="/imagenes/visily-circle-check (6).png" alt="">
+                        <p class="section-list">Planes de alimentación personalizados.</p>
+                    </div>
+                    <div style="display: flex; flex-direction: row; gap: 12px; align-items: center;">
+                        <img src="/imagenes/visily-circle-check (6).png" alt="">
+                        <p class="section-list">Sesiones semanales de yoga y movilidad.</p>
+                    </div>
+                    
+                    
                 </div>
 
 
@@ -741,17 +828,17 @@
 
             <div style="display: flex; flex-direction: row; gap: 32px;">
                 <div class="razon-card">
-                    <img>
+                    <img src="/imagenes/clock_icon.png" style="border-radius: 5px;">
                     <p class="razon-card-title">Acceso 24/7</p>
                     <p class="razon-card-content">Entrena cuando tú quieras, sin límites de horario para tu progreso.</p>
                 </div>
                 <div class="razon-card">
-                    <img>
+                    <img src="/imagenes/Zap.png" style="border-radius: 5px;">
                     <p class="razon-card-title">App Exclusiva</p>
                     <p class="razon-card-content">Sigue tu progreso y rutinas desde tu celular con nuestra app oficial.</p>
                 </div>
                 <div class="razon-card">
-                    <img>
+                    <img src="/imagenes/star-icon.png" style="border-radius: 5px;">
                     <p class="razon-card-title">Duchas Premium</p>
                     <p class="razon-card-content">Instalaciones de lujo con todo lo necesario para salir listo al trabajo.</p>
                 </div>
@@ -759,24 +846,24 @@
 
             <div style="display: flex; flex-direction: row; gap: 32px;">
                 <div class="razon-card">
-                    <img>
+                    <img src="/imagenes/escudo-icon.png" style="border-radius: 5px;">
                     <p class="razon-card-title">Parking Gratuito</p>
                     <p class="razon-card-content">Espacio amplio y seguro para tu vehículo sin costo adicional.</p>
                 </div>
                 <div class="razon-card">
-                    <img>
+                    <img src="/imagenes/pesas-icon.png" style="border-radius: 5px;"">
                     <p class="razon-card-title">Suplementación</p>
                     <p class="razon-card-content">Bar de proteínas y tienda de suplementos de las mejores marcas.</p>
                 </div>
                 <div class="razon-card">
-                    <img>
+                    <img src="/imagenes/comunidad-icon.png" style="border-radius: 5px;">
                     <p class="razon-card-title">Comunidad VIP</p>
                     <p class="razon-card-content">Eventos mensuales y retos exclusivos para nuestros miembros.</p>
                 </div>
             </div>
         </div>
 
-        <a class="rating-button" href="">AGENDA TU CLASE GRATIS</a>
+        <a class="rating-button" style="background-color: #FF4D4D;">AGENDA TU CLASE GRATIS</a>
     </section>
 
 
@@ -857,74 +944,130 @@
 
     <section style="height: 857px; display: flex; flex-direction: column; gap: 65px; align-items: center;">
 
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">
             <h1>PREGUNTAS FRECUENTES</h1>
-            <p class="section-subtitle">Resolvemos tus dudas antes de empezar tu transformación.</p>
-        </div>
-
-        <div class="query-column"  style="display: flex; flex-direction: column; gap: 8px;">
-            <div class="faq-trigger">
-                <button>¿NECESITO EXPERIENCIA PREVIA PARA UNIRME?</button>
-                <div class="faq-content">
-                    <p>Respuesta #1</p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="faq-trigger">
-                <button>¿NECESITO EXPERIENCIA PREVIA PARA UNIRME?</button>
-                <div class="faq-content">
-                    <p>Respuesta #2</p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="faq-trigger">
-                <button>¿TIENEN PLANES PARA ESTUDIANTES O FAMILIAS?</button>
-                <div class="faq-content">
-                    <p>Respuesta #3</p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="faq-trigger">
-                <p>¿PUEDO CANCELAR MI SUSCRIPCIÓN EN CUALQUIER MOMENTO?</p>
-                <div class="faq-content">
-                    <p>Respuesta #4</p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="faq-trigger">
-                <p>¿OFRECEN SERVICIOS DE NUTRICIÓN?</p>
-                <div class="faq-content">
-                    <p>Respuesta #4</p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="faq-trigger">
-                <p>¿CUÁLES SON SUS MEDIDAS DE HIGIENE?</p>
-                <div class="faq-content">
-                    <p>Respuesta #5</p>
-                </div>
-            </div>
-
-            <hr>
+            <p class="section-subtitle">Resolvemos tus dudas antes de empezar tu transformacion</p>
         </div>
 
 
-        
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-header">
+                    <span>¿NECESITO EXPERIENCIA PREVIA PARA UNIRME?</span>
+                    <svg class="faq-icon" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-body">
+                    <div class="faq-content">
+                        No necesitas ninguna experiencia previa. Nuestros entrenadores te guiarán paso a paso adaptando cada ejercicio a tu nivel actual.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-header">
+                    <span>¿QUÉ INCLUYE LA MEMBRESÍA MENSUAL?</span>
+                    <svg class="faq-icon" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-body">
+                    <div class="faq-content">
+                        Incluye acceso ilimitado a las instalaciones, clases grupales programadas y asesoría inicial con nuestros entrenadores.
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="faq-item">
+                <button class="faq-header">
+                    <span>¿TIENEN PLANES PARA ESTUDIANTES O FAMILIAS?</span>
+                    <svg class="faq-icon" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-body">
+                    <div class="faq-content">
+                        Sí, contamos con descuentos especiales presentando credencial de estudiante vigente y planes familiares a partir de 3 integrantes.
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="faq-item">
+                <button class="faq-header">
+                    <span>¿PUEDO CANCELAR MI SUSCRIPCIÓN EN CUALQUIER MOMENTO?</span>
+                    <svg class="faq-icon" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-body">
+                    <div class="faq-content">
+                        Claro que sí, no tenemos plazos forzosos. Puedes solicitar la cancelación 5 días antes de tu siguiente fecha de cobro.
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="faq-item">
+                <button class="faq-header">
+                    <span>¿OFRECEN SERVICIOS DE NUTRICIÓN?</span>
+                    <svg class="faq-icon" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-body">
+                    <div class="faq-content">
+                        Ofrecemos planes nutricionales personalizados con costo adicional, diseñados por profesionales para complementar tu entrenamiento.
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="faq-item">
+                <button class="faq-header">
+                    <span>¿CUÁLES SON SUS MEDIDAS DE HIGIENE?</span>
+                    <svg class="faq-icon" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-body">
+                    <div class="faq-content">
+                        Sanitizamos constantemente los equipos, contamos con estaciones de gel antibacterial y ventilación constante en todas las áreas.
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
 
+
+
+
     <script>
-        addEventListener
+        document.addEventListener("DOMContentLoaded", () => {
+        const faqHeaders = document.querySelectorAll(".faq-header");
+
+        faqHeaders.forEach((header) => {
+            header.addEventListener("click", () => {
+            const currentItem = header.parentElement;
+            const currentBody = currentItem.querySelector(".faq-body");
+            const isActive = currentItem.classList.contains("active");
+
+            // 2. Abrir / Cerrar el elemento clickeado
+            if (isActive) {
+                currentItem.classList.remove("active");
+                currentBody.style.maxHeight = null;
+            } else {
+                currentItem.classList.add("active");
+                // scrollHeight calcula la altura real del contenido interno
+                currentBody.style.maxHeight = currentBody.scrollHeight + "px";
+            }
+            });
+        });
+        });
     </script>
 
 
@@ -957,14 +1100,27 @@
                 <p class="section-subtitle">Únete hoy y obtén un 50% de descuento en tu inscripción más un kit de bienvenida exclusivo de Fit Center.</p>
 
                 <div style="display: flex; flex-direction: row; gap: 23px;">
-                    <a class="hero-button">AGENDA TU CLASE GRATIS</a>
-                    <a class="rating-button">LLAMAR A UN ASESOR</a>
+                    <a class="hero-button" style="width: 389px;">AGENDA TU CLASE GRATIS</a>
+                    <a class="rating-button" style="width: 260px; background: #00000000; /* transparent */; border: solid 1px white;">Llamar a un Asesor</a>
                 </div>
                 
                 <div class="contact-list" style="display: flex; flex-direction: row; justify-content: center; gap: 29px; width: auto;">
-                    <p>Sin costos ocultos</p>
-                    <p>Inscripcion rapida</p>
-                    <p>Cupos limitados</p>
+                    <div style="display: flex; flex-direction: row; gap: 8px; align-items: center;">
+                        <img src="/imagenes/visily-circle-check (6).png" alt="">
+                        <p>Sin costos ocultos</p>
+                    </div>
+                    <div style="display: flex; flex-direction: row; gap: 8px; align-items: center;">
+                        <img src="/imagenes/visily-circle-check (6).png" alt="">
+                        <p>Inscripcion rapida</p>
+
+                    </div>
+                    <div style="display: flex; flex-direction: row; gap: 8px; align-items: center;">
+                        <img src="/imagenes/visily-circle-check (6).png" alt="">
+                        <p>Cupos limitados</p>
+                    </div>
+                    
+                    
+                    
                 </div>
             </div>
         </div>
@@ -985,7 +1141,7 @@
     <footer>
         <div style="width: 294px; display: flex; flex-direction: column; gap: 13px;">
             <div style="display: flex; flex-direction: row; gap: 8px; align-items: center;">
-                <img style="width: 40px; height: 40px; border-radius: 100%; background: #007BFFFF;">
+                <img src="/imagenes/logo.png" style="width: 40px; height: 40px; border-radius: 100%;">
                 <p class="footer-logo">Fit Center</p>
             </div>
             
@@ -999,9 +1155,9 @@
                 <p>Términos de Servicio</p>
             </div>
             <div style="display: flex; flex-direction: row; gap: 16px;">
-                <img style="width: 36px; height: 36px; border-radius: 100%; background: #3A3C41FF; ">
-                <img style="width: 36px; height: 36px; border-radius: 100%; background: #3A3C41FF;">
-                <img style="width: 36px; height: 36px; border-radius: 100%; background: #3A3C41FF;">
+                <img src="imagenes/instagram.png" style="width: 36px; height: 36px; border-radius: 100%; background: #3A3C41FF; ">
+                <img src="/imagenes/x.png" style="width: 36px; height: 36px; border-radius: 100%; background: #3A3C41FF;">
+                <img src="/imagenes/facebook.png" style="width: 36px; height: 36px; border-radius: 100%; background: #3A3C41FF;">
             </div>
             <p style="font-size: 12px; font-weight: 400; color: #A8ABB2FF; ">© 2026 Fit Center. Todos los derechos reservados.</p>
         </div>
